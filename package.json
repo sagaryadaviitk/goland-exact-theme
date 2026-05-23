@@ -33,14 +33,6 @@
     "go",
     "dark"
   ],
-  "files": [
-    "extension.js",
-    "icons/**",
-    "themes/**",
-    "README.md",
-    "CHANGELOG.md",
-    "LICENSE"
-  ],
   "contributes": {
     "themes": [
       {
@@ -74,6 +66,22 @@
     }
   },
   "scripts": {
-    "validate": "node -c extension.js && node -e \"JSON.parse(require('fs').readFileSync('package.json','utf8')); JSON.parse(require('fs').readFileSync('icons/goland-exact-icons.json','utf8')); JSON.parse(require('fs').readFileSync('themes/goland-exact-dark-color-theme.json','utf8')); console.log('ok')\""
+    "validate": "node scripts/validate.js",
+    "package": "npm run validate && npx @vscode/vsce package",
+    "vscode:prepublish": "npm run validate"
+  },
+  "icon": "resources/icon.png",
+  "galleryBanner": {
+    "color": "#2B2D30",
+    "theme": "dark"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
   }
 }
