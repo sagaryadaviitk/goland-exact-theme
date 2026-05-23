@@ -2,7 +2,7 @@
   "name": "goland-exact-theme",
   "displayName": "GoLand Exact Theme",
   "description": "A custom dark theme tuned to closely match the GoLand dark UI and Go syntax colors.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "sagaryadaviitk",
   "license": "MIT",
   "repository": {
